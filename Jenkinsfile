@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven3'
+    }
     stages {
         stage('provioson server'){
             environment {
@@ -12,6 +15,13 @@ pipeline {
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
                     }
+                }
+            }
+        }
+        stage('Build'){
+            steps {
+                script {
+                    sh "mvn clean package"
                 }
             }
         }
