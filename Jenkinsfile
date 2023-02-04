@@ -14,7 +14,6 @@ pipeline {
                     dir('terraform') {
                     sh "terraform init"
                     sh "terraform apply --auto-approve"
-                    sh "terraform output public_key > example-key-pair.pem"
                     }
                 }
             }
@@ -26,12 +25,12 @@ pipeline {
                 }
             }
         }
-        stage('Deploy'){
-            steps {
-                script {
-                    sh "mvn clean package"
-                }
-            }
-        }
+        // stage('Deploy'){
+        //     steps {
+        //         script {
+        //             sh "mvn clean package"
+        //         }
+        //     }
+        // }
     }
 }
