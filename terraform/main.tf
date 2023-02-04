@@ -91,7 +91,12 @@ data "aws_ami" "latest-amazon-linux-image" {
 
 data "aws_key_pair" "example" {
   key_name = "new-key"
+    filter {
+    name   = "tag:Name"
+    values = ["value"]
   }
+  }
+
 resource "aws_instance" "myapp-server" {
     ami = data.aws_ami.latest-amazon-linux-image.id
     instance_type = var.instance_type
