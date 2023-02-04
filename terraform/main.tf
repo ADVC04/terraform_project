@@ -91,6 +91,7 @@ data "aws_ami" "latest-amazon-linux-image" {
 
 resource "aws_key_pair" "example" {
   key_name = "example-key-pair"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBCZWHsI9mz0waS1Al0JJnUvAUCofzFAoZ+kvn5QSn6YeKgEYGFqBeK9anLnXaReXp33A3BEFDvHjH7XBkv09P02MYbkfjs5uZ0gwiX+oduEbSOiqAtWPx8farhcYrBpUwdyR2V0PpFk3shUy8pVsZI+3DB8C6BtIi2Hun6Gm/UvZOl6OVDyYcfLcmAKXZqRRFd8CAD+uui9tii2Jvn+ZONUaRPauA7HpUUkv3oHbhurUnrZbvtLrNmqL5bVb57tukXQ0gWuYeUpi1KDD8RVNV+iqjPW8CLIkjRlWH4i9gRQR5yc/0zDgof9ddKqaVgCBpoQunkK01AWHtdc2Hmi1b5RoeAMLdl19sq0IjPb39z7O4WNFY4s8esvKFCNGZ/m6W/ZOjt0ZOzd4Z97xmF/o6IlBbtkDhjeeip7D6gevBJ6nP8+IuzpUYIJnbd5Oxnm1yRAKGcEThXrWgYo0EiBnRipkD9q8qsWtmeZLse9MVCRxE7F+T3ZWaY/MnKRtb2eE= sijju999@HighQ"
 }
 
 resource "aws_instance" "myapp-server" {
