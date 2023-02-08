@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy'){
              steps {
                  sshagent(['ecr-server']) {
-        sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/ci-cd/target/java-app.jar ubuntu@35.154.68.160:/tmp/'
+        sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/ci-cd/target/java-app.jar ubuntu@3.110.160.203:/tmp/'
         }
                  }
              }
